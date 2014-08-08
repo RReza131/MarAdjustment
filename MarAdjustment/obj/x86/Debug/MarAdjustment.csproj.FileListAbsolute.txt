@@ -1,0 +1,10 @@
+C:\Users\breza\Documents\MyGameProgramming\MarAdjustment\MarAdjustment\bin\Debug\MarAdjustment.exe
+C:\Users\breza\Documents\MyGameProgramming\MarAdjustment\MarAdjustment\bin\Debug\MarAdjustment.pdb
+C:\Users\breza\Documents\MyGameProgramming\MarAdjustment\MarAdjustment\obj\x86\Debug\MarAdjustment.csprojResolveAssemblyReference.cache
+C:\Users\breza\Documents\MyGameProgramming\MarAdjustment\MarAdjustment\obj\x86\Debug\MarAdjustment.MarAdjustmentMainForm.resources
+C:\Users\breza\Documents\MyGameProgramming\MarAdjustment\MarAdjustment\obj\x86\Debug\MarAdjustment.Properties.Resources.resources
+C:\Users\breza\Documents\MyGameProgramming\MarAdjustment\MarAdjustment\obj\x86\Debug\MarAdjustment.csproj.GenerateResource.Cache
+C:\Users\breza\Documents\MyGameProgramming\MarAdjustment\MarAdjustment\obj\x86\Debug\MarAdjustment.exe
+C:\Users\breza\Documents\MyGameProgramming\MarAdjustment\MarAdjustment\obj\x86\Debug\MarAdjustment.pdb
+C:\Users\breza\Documents\GitHub\MarAdjustment\MarAdjustment\obj\x86\Debug\MarAdjustment.exe
+C:\Users\breza\Documents\GitHub\MarAdjustment\MarAdjustment\obj\x86\Debug\MarAdjustment.pdb
