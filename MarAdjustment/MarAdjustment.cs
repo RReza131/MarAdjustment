@@ -31,7 +31,6 @@ namespace MarAdjustment
 
         private decimal _headerHeightSug;
         private decimal _footerHeighSug;
-        private decimal _headerHeightSug;
 
         public decimal pageHeight { get; set; }
 
