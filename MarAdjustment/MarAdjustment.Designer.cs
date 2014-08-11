@@ -53,6 +53,17 @@
             this.label12 = new System.Windows.Forms.Label();
             this.uxDesiredMovement = new System.Windows.Forms.ComboBox();
             this.btnCalculate = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.uxNumberLinesToMoveBy = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblPageHeight
@@ -126,7 +137,7 @@
             this.uxTopMarginOG.Location = new System.Drawing.Point(116, 192);
             this.uxTopMarginOG.Name = "uxTopMarginOG";
             this.uxTopMarginOG.Size = new System.Drawing.Size(100, 20);
-            this.uxTopMarginOG.TabIndex = 5;
+            this.uxTopMarginOG.TabIndex = 6;
             // 
             // label5
             // 
@@ -204,7 +215,7 @@
             // lblCommentTextSuggestions
             // 
             this.lblCommentTextSuggestions.AutoSize = true;
-            this.lblCommentTextSuggestions.Location = new System.Drawing.Point(12, 418);
+            this.lblCommentTextSuggestions.Location = new System.Drawing.Point(12, 409);
             this.lblCommentTextSuggestions.Name = "lblCommentTextSuggestions";
             this.lblCommentTextSuggestions.Size = new System.Drawing.Size(75, 13);
             this.lblCommentTextSuggestions.TabIndex = 0;
@@ -221,14 +232,14 @@
             // 
             // uxHeaderHeightSug
             // 
-            this.uxHeaderHeightSug.Location = new System.Drawing.Point(222, 220);
+            this.uxHeaderHeightSug.Location = new System.Drawing.Point(272, 220);
             this.uxHeaderHeightSug.Name = "uxHeaderHeightSug";
             this.uxHeaderHeightSug.Size = new System.Drawing.Size(100, 20);
             this.uxHeaderHeightSug.TabIndex = 8;
             // 
             // uxPageFooterHeightSug
             // 
-            this.uxPageFooterHeightSug.Location = new System.Drawing.Point(222, 272);
+            this.uxPageFooterHeightSug.Location = new System.Drawing.Point(272, 272);
             this.uxPageFooterHeightSug.Name = "uxPageFooterHeightSug";
             this.uxPageFooterHeightSug.Size = new System.Drawing.Size(100, 20);
             this.uxPageFooterHeightSug.TabIndex = 12;
@@ -236,7 +247,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(243, 162);
+            this.label12.Location = new System.Drawing.Point(293, 162);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(58, 13);
             this.label12.TabIndex = 0;
@@ -249,6 +260,7 @@
             this.uxDesiredMovement.Name = "uxDesiredMovement";
             this.uxDesiredMovement.Size = new System.Drawing.Size(121, 21);
             this.uxDesiredMovement.TabIndex = 4;
+            this.uxDesiredMovement.Leave += new System.EventHandler(this.uxDesiredMovement_Leave);
             // 
             // btnCalculate
             // 
@@ -260,11 +272,114 @@
             this.btnCalculate.UseVisualStyleBackColor = true;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(244, 119);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(22, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "By:";
+            // 
+            // uxNumberLinesToMoveBy
+            // 
+            this.uxNumberLinesToMoveBy.Location = new System.Drawing.Point(272, 116);
+            this.uxNumberLinesToMoveBy.Name = "uxNumberLinesToMoveBy";
+            this.uxNumberLinesToMoveBy.Size = new System.Drawing.Size(100, 20);
+            this.uxNumberLinesToMoveBy.TabIndex = 5;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(378, 119);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(32, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Lines";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(222, 12);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(38, 13);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "inches";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(222, 199);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(38, 13);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "inches";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(222, 227);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(38, 13);
+            this.label16.TabIndex = 16;
+            this.label16.Text = "inches";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(222, 253);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(38, 13);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "inches";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(222, 279);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(38, 13);
+            this.label18.TabIndex = 18;
+            this.label18.Text = "inches";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(222, 305);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(38, 13);
+            this.label19.TabIndex = 19;
+            this.label19.Text = "inches";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(378, 279);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(38, 13);
+            this.label20.TabIndex = 20;
+            this.label20.Text = "inches";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(378, 227);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(38, 13);
+            this.label21.TabIndex = 21;
+            this.label21.Text = "inches";
+            // 
             // MarAdjustmentMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 542);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.uxDesiredMovement);
             this.Controls.Add(this.uxBottomMarginOG);
@@ -283,12 +398,17 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.uxNumberLinesToMoveBy);
             this.Controls.Add(this.uxDetailsPerPage);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.uxRowsPerDetail);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.uxPageHeight);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.lblPageHeight);
             this.Name = "MarAdjustmentMainForm";
             this.Text = "Mar Adjustment";
@@ -324,6 +444,17 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox uxDesiredMovement;
         private System.Windows.Forms.Button btnCalculate;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox uxNumberLinesToMoveBy;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
     }
 }
 

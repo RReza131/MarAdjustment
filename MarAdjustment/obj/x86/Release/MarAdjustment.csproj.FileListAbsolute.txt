@@ -1,0 +1,7 @@
+C:\Users\breza\Documents\GitHub\MarAdjustment\MarAdjustment\bin\Release\MarAdjustment.exe
+C:\Users\breza\Documents\GitHub\MarAdjustment\MarAdjustment\bin\Release\MarAdjustment.pdb
+C:\Users\breza\Documents\GitHub\MarAdjustment\MarAdjustment\obj\x86\Release\MarAdjustment.MarAdjustmentMainForm.resources
+C:\Users\breza\Documents\GitHub\MarAdjustment\MarAdjustment\obj\x86\Release\MarAdjustment.Properties.Resources.resources
+C:\Users\breza\Documents\GitHub\MarAdjustment\MarAdjustment\obj\x86\Release\MarAdjustment.csproj.GenerateResource.Cache
+C:\Users\breza\Documents\GitHub\MarAdjustment\MarAdjustment\obj\x86\Release\MarAdjustment.exe
+C:\Users\breza\Documents\GitHub\MarAdjustment\MarAdjustment\obj\x86\Release\MarAdjustment.pdb

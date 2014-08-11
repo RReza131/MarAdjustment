@@ -16,14 +16,16 @@ namespace MarAdjustment
         {
             InitializeComponent();
             LoadLookupLists();
+            suggestedComments = new StringBuilder();
         }
         #endregion
 
         #region Enums
         public enum MovementType
         {
-            Down = 0,
-            Up = 1      
+            NA = 0,
+            Down = 1,
+            Up = 2      
         }
         #endregion
 
@@ -44,6 +46,7 @@ namespace MarAdjustment
         public decimal detailHeightOG { get; set; }
         public decimal footerHeightOG { get; set; }
         public decimal bottomMarginHeightOG { get; set; }
+        public decimal numberLinesToMoveBy { get; set; }
 
         public decimal headerHeightSug        
         {
@@ -72,7 +75,7 @@ namespace MarAdjustment
             }
         }
 
-        private string suggestedComments { get; set; }
+        private StringBuilder suggestedComments { get; set; }
 
         #endregion
 
@@ -87,6 +90,7 @@ namespace MarAdjustment
         private void LoadDesiredMovementList()
         {
             Dictionary<MovementType, string> list = new Dictionary<MovementType, string>();
+            list.Add(MovementType.NA, "");
             list.Add(MovementType.Down, "Down");
             list.Add(MovementType.Up, "Up");
 
@@ -109,6 +113,7 @@ namespace MarAdjustment
              detailHeightOG = uxDetailHeightOG.Text.Trim() != string.Empty? decimal.Parse(uxDetailHeightOG.Text.Trim()):0;
              footerHeightOG = uxPageFooterHeightOG.Text.Trim() != string.Empty ? decimal.Parse(uxPageFooterHeightOG.Text.Trim()) : 0;
              bottomMarginHeightOG = uxBottomMarginOG.Text.Trim() != string.Empty ? decimal.Parse(uxBottomMarginOG.Text.Trim()) : 0;
+             numberLinesToMoveBy = uxNumberLinesToMoveBy.Text.Trim() != string.Empty ? decimal.Parse(uxNumberLinesToMoveBy.Text.Trim()) : 0;
 
              //topMarginSug = uxTopMarginSug.Text.Trim() != string.Empty ? decimal.Parse(uxTopMarginSug.Text.Trim()) : 0;
              //headerHeightSug = uxHeaderHeightSug.Text.Trim() != string.Empty ? decimal.Parse(uxHeaderHeightSug.Text.Trim()) : 0;
@@ -123,34 +128,44 @@ namespace MarAdjustment
 
             if (Movement == MovementType.Up)
             {
-                calculatedHeight = headerHeight - detailHeight;
+                calculatedHeight = headerHeight - (detailHeight * numberLinesToMoveBy);
             }
             else
             {
-                calculatedHeight = headerHeight + detailHeight;
+                calculatedHeight = headerHeight + (detailHeight * numberLinesToMoveBy);
             }        
             
-            return calculatedHeight.ToString("0.00");
+            return calculatedHeight.ToString("0.000");
         }
-        private string calculateFooterHeight(decimal footerHeight, decimal detailHeight, MovementType Movement)
+        private string calculateFooterHeight(decimal footerHeight, decimal detailHeight, MovementType Movement, decimal numberLinesToMoveBy)
         {
             decimal calculatedHeight;
 
             if (Movement == MovementType.Up)
             {
-                calculatedHeight = footerHeight + detailHeight;
+                calculatedHeight = footerHeight + (detailHeight * numberLinesToMoveBy);
             }
             else
             {
-                calculatedHeight = footerHeight - detailHeight;
+                calculatedHeight = footerHeight - (detailHeight * numberLinesToMoveBy);
             }
 
-            return calculatedHeight.ToString("0.00");
+            return calculatedHeight.ToString("0.000");
+        }
+
+        private void setCommentBox(StringBuilder comment)
+        {
+            lblCommentTextSuggestions.Text = comment.ToString();
+        }
+        private void clearCommentBox()
+        {
+            suggestedComments.Clear();
         }
 
 
-
         #endregion
+
+        #region events
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
@@ -159,6 +174,26 @@ namespace MarAdjustment
             uxPageFooterHeightSug.Text = calculateHeaderHeight(footerHeightOG, detailHeightOG, desiredMovement);
 
         }
+
+        private void uxDesiredMovement_Leave(object sender, EventArgs e)
+        {
+            if ((MovementType)uxDesiredMovement.SelectedValue == MovementType.Up)
+            {
+                clearCommentBox();
+                suggestedComments.AppendLine("You can not resolve this by adjusting the adjustmens on the printer group and will have to adjust the layout height.");
+                setCommentBox(suggestedComments);
+
+            }
+            else if ((MovementType)uxDesiredMovement.SelectedValue == MovementType.Down)
+            {
+                clearCommentBox();
+                suggestedComments.AppendLine("Have you tried adding a vertical adjustment on the printer group?");
+                suggestedComments.AppendLine("Note: This will shift all contents (header, footer, details) down");
+                setCommentBox(suggestedComments);
+            }
+        }
+
+        #endregion
 
 
 
