@@ -64,6 +64,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.uxIssueNotes = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblPageHeight
@@ -206,9 +208,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(12, 396);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(122, 13);
+            this.label8.Size = new System.Drawing.Size(143, 13);
             this.label8.TabIndex = 0;
             this.label8.Text = "Suggestions/Comments:";
             // 
@@ -224,9 +227,10 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(144, 162);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(42, 13);
+            this.label11.Size = new System.Drawing.Size(50, 13);
             this.label11.TabIndex = 0;
             this.label11.Text = "Original";
             // 
@@ -247,9 +251,10 @@
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(293, 162);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 13);
+            this.label12.Size = new System.Drawing.Size(67, 13);
             this.label12.TabIndex = 0;
             this.label12.Text = "Suggested";
             // 
@@ -369,11 +374,30 @@
             this.label21.TabIndex = 21;
             this.label21.Text = "inches";
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(12, 513);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(78, 13);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Issue Notes:";
+            // 
+            // uxIssueNotes
+            // 
+            this.uxIssueNotes.Location = new System.Drawing.Point(15, 530);
+            this.uxIssueNotes.Multiline = true;
+            this.uxIssueNotes.Name = "uxIssueNotes";
+            this.uxIssueNotes.Size = new System.Drawing.Size(430, 66);
+            this.uxIssueNotes.TabIndex = 22;
+            // 
             // MarAdjustmentMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 542);
+            this.ClientSize = new System.Drawing.Size(457, 608);
+            this.Controls.Add(this.uxIssueNotes);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
@@ -386,6 +410,7 @@
             this.Controls.Add(this.uxPageFooterHeightSug);
             this.Controls.Add(this.uxPageFooterHeightOG);
             this.Controls.Add(this.lblCommentTextSuggestions);
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.uxDetailHeightOG);
             this.Controls.Add(this.label9);
@@ -455,6 +480,8 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox uxIssueNotes;
     }
 }
 

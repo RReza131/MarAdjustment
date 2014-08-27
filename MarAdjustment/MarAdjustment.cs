@@ -17,6 +17,8 @@ namespace MarAdjustment
             InitializeComponent();
             LoadLookupLists();
             suggestedComments = new StringBuilder();
+            SetDefaultValues();
+
         }
         #endregion
 
@@ -115,6 +117,8 @@ namespace MarAdjustment
              bottomMarginHeightOG = uxBottomMarginOG.Text.Trim() != string.Empty ? decimal.Parse(uxBottomMarginOG.Text.Trim()) : 0;
              numberLinesToMoveBy = uxNumberLinesToMoveBy.Text.Trim() != string.Empty ? decimal.Parse(uxNumberLinesToMoveBy.Text.Trim()) : 0;
 
+             
+
              //topMarginSug = uxTopMarginSug.Text.Trim() != string.Empty ? decimal.Parse(uxTopMarginSug.Text.Trim()) : 0;
              //headerHeightSug = uxHeaderHeightSug.Text.Trim() != string.Empty ? decimal.Parse(uxHeaderHeightSug.Text.Trim()) : 0;
              //detailHeightSug = uxDetailHeightSug.Text.Trim() != string.Empty ? decimal.Parse(uxDetailHeightSug.Text.Trim()) : 0;
@@ -122,17 +126,26 @@ namespace MarAdjustment
              //bottomMarginHeightSug = uxBottomMarginSug.Text.Trim() != string.Empty ? decimal.Parse(uxBottomMarginSug.Text.Trim()) : 0; 
         }
 
-        private string calculateHeaderHeight(decimal headerHeight, decimal detailHeight, MovementType Movement)
+        private void SetDefaultValues()
+        {
+            lblCommentTextSuggestions.Text = String.Empty;
+            uxDesiredMovement.SelectedValue = MovementType.Down;
+            uxNumberLinesToMoveBy.Text = "1";
+            uxDetailHeightOG.Text = ".167";
+        }
+
+        private string calculateHeaderHeight(decimal headerHeight, decimal detailHeight, MovementType Movement, decimal numberLinesToMoveBy)
         {
             decimal calculatedHeight;
+            decimal inchesToMove = (detailHeight * numberLinesToMoveBy);
 
             if (Movement == MovementType.Up)
             {
-                calculatedHeight = headerHeight - (detailHeight * numberLinesToMoveBy);
+                calculatedHeight = headerHeight - inchesToMove;
             }
             else
             {
-                calculatedHeight = headerHeight + (detailHeight * numberLinesToMoveBy);
+                calculatedHeight = headerHeight + inchesToMove;
             }        
             
             return calculatedHeight.ToString("0.000");
@@ -140,14 +153,28 @@ namespace MarAdjustment
         private string calculateFooterHeight(decimal footerHeight, decimal detailHeight, MovementType Movement, decimal numberLinesToMoveBy)
         {
             decimal calculatedHeight;
+            decimal inchesToMove = (detailHeight * numberLinesToMoveBy);
 
             if (Movement == MovementType.Up)
             {
-                calculatedHeight = footerHeight + (detailHeight * numberLinesToMoveBy);
+                calculatedHeight = footerHeight + inchesToMove;
+                clearCommentBox();
+                suggestedComments.AppendLine("Select all contents of the footer except the red Reminder Textbox (if there is one)");
+                suggestedComments.AppendLine("and move everything DOWN by: " + inchesToMove.ToString("0.00") + " inches");
+                suggestedComments.AppendLine("Note that 1 hit of the up or down arrow key is .01 inches each time pressed");
+                setCommentBox(suggestedComments);
+                setIssueNotes(Movement, inchesToMove, calculatedHeight);
             }
             else
             {
-                calculatedHeight = footerHeight - (detailHeight * numberLinesToMoveBy);
+                calculatedHeight = footerHeight - inchesToMove;
+
+                clearCommentBox();
+                suggestedComments.AppendLine("Select all contents of the footer except the red Reminder Textbox (if there is one)");
+                suggestedComments.AppendLine("and move everything UP by: " + inchesToMove.ToString("0.00") + " inches");
+                suggestedComments.AppendLine("Note that 1 hit of the up or down arrow key is .01 inches each time pressed");
+                setCommentBox(suggestedComments);
+                setIssueNotes(Movement, inchesToMove, calculatedHeight);
             }
 
             return calculatedHeight.ToString("0.000");
@@ -162,6 +189,18 @@ namespace MarAdjustment
             suggestedComments.Clear();
         }
 
+        private void setIssueNotes(MovementType Movement, decimal inchesToMove, decimal newFooterHeight)
+        {
+            MovementType MovementOfShift = Movement == MovementType.Up ? MovementType.Down : MovementType.Up;
+
+            uxIssueNotes.Text = "Shifted details on the MAR " + Movement.ToString() + " by " + inchesToMove.ToString()
+                + " inches by changing the header from " + uxHeaderHeightOG.Text.Trim() + " to " + uxHeaderHeightSug.Text.Trim()
+                + " and the footer from " + uxPageFooterHeightOG.Text.Trim() + " to " + newFooterHeight.ToString("0.000")
+                + ", moving all contents in the footer " + MovementOfShift.ToString() + " by " + inchesToMove.ToString("0.00")
+                + " inches to compensate";
+                
+        }
+
 
         #endregion
 
@@ -170,8 +209,8 @@ namespace MarAdjustment
         private void btnCalculate_Click(object sender, EventArgs e)
         {
             SetValues();
-            uxHeaderHeightSug.Text = calculateHeaderHeight(headerHeightOG, detailHeightOG, desiredMovement);
-            uxPageFooterHeightSug.Text = calculateHeaderHeight(footerHeightOG, detailHeightOG, desiredMovement);
+            uxHeaderHeightSug.Text = calculateHeaderHeight(headerHeightOG, detailHeightOG, desiredMovement, numberLinesToMoveBy);
+            uxPageFooterHeightSug.Text = calculateFooterHeight(footerHeightOG, detailHeightOG, desiredMovement, numberLinesToMoveBy);
 
         }
 
