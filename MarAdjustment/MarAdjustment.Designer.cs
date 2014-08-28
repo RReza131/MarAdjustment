@@ -28,12 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblPageHeight = new System.Windows.Forms.Label();
-            this.uxPageHeight = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.uxRowsPerDetail = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.uxDetailsPerPage = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.uxTopMarginOG = new System.Windows.Forms.TextBox();
@@ -56,7 +50,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.uxNumberLinesToMoveBy = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -68,58 +61,10 @@
             this.uxIssueNotes = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // lblPageHeight
-            // 
-            this.lblPageHeight.AutoSize = true;
-            this.lblPageHeight.Location = new System.Drawing.Point(12, 12);
-            this.lblPageHeight.Name = "lblPageHeight";
-            this.lblPageHeight.Size = new System.Drawing.Size(69, 13);
-            this.lblPageHeight.TabIndex = 0;
-            this.lblPageHeight.Text = "Page Height:";
-            // 
-            // uxPageHeight
-            // 
-            this.uxPageHeight.Location = new System.Drawing.Point(116, 9);
-            this.uxPageHeight.Name = "uxPageHeight";
-            this.uxPageHeight.Size = new System.Drawing.Size(100, 20);
-            this.uxPageHeight.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Rows per Detail:";
-            // 
-            // uxRowsPerDetail
-            // 
-            this.uxRowsPerDetail.Location = new System.Drawing.Point(116, 35);
-            this.uxRowsPerDetail.Name = "uxRowsPerDetail";
-            this.uxRowsPerDetail.Size = new System.Drawing.Size(100, 20);
-            this.uxRowsPerDetail.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Details per Page:";
-            // 
-            // uxDetailsPerPage
-            // 
-            this.uxDetailsPerPage.Location = new System.Drawing.Point(116, 61);
-            this.uxDetailsPerPage.Name = "uxDetailsPerPage";
-            this.uxDetailsPerPage.Size = new System.Drawing.Size(100, 20);
-            this.uxDetailsPerPage.TabIndex = 3;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 119);
+            this.label3.Location = new System.Drawing.Point(12, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 13);
             this.label3.TabIndex = 0;
@@ -128,7 +73,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 199);
+            this.label4.Location = new System.Drawing.Point(12, 89);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 0;
@@ -136,7 +81,7 @@
             // 
             // uxTopMarginOG
             // 
-            this.uxTopMarginOG.Location = new System.Drawing.Point(116, 192);
+            this.uxTopMarginOG.Location = new System.Drawing.Point(116, 82);
             this.uxTopMarginOG.Name = "uxTopMarginOG";
             this.uxTopMarginOG.Size = new System.Drawing.Size(100, 20);
             this.uxTopMarginOG.TabIndex = 6;
@@ -144,7 +89,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 223);
+            this.label5.Location = new System.Drawing.Point(12, 113);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 13);
             this.label5.TabIndex = 0;
@@ -152,7 +97,7 @@
             // 
             // uxHeaderHeightOG
             // 
-            this.uxHeaderHeightOG.Location = new System.Drawing.Point(116, 220);
+            this.uxHeaderHeightOG.Location = new System.Drawing.Point(116, 110);
             this.uxHeaderHeightOG.Name = "uxHeaderHeightOG";
             this.uxHeaderHeightOG.Size = new System.Drawing.Size(100, 20);
             this.uxHeaderHeightOG.TabIndex = 7;
@@ -160,7 +105,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 249);
+            this.label6.Location = new System.Drawing.Point(12, 139);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 13);
             this.label6.TabIndex = 0;
@@ -168,7 +113,7 @@
             // 
             // uxDetailHeightOG
             // 
-            this.uxDetailHeightOG.Location = new System.Drawing.Point(116, 246);
+            this.uxDetailHeightOG.Location = new System.Drawing.Point(116, 136);
             this.uxDetailHeightOG.Name = "uxDetailHeightOG";
             this.uxDetailHeightOG.Size = new System.Drawing.Size(100, 20);
             this.uxDetailHeightOG.TabIndex = 9;
@@ -176,7 +121,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 275);
+            this.label7.Location = new System.Drawing.Point(12, 165);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 13);
             this.label7.TabIndex = 0;
@@ -184,7 +129,7 @@
             // 
             // uxPageFooterHeightOG
             // 
-            this.uxPageFooterHeightOG.Location = new System.Drawing.Point(116, 272);
+            this.uxPageFooterHeightOG.Location = new System.Drawing.Point(116, 162);
             this.uxPageFooterHeightOG.Name = "uxPageFooterHeightOG";
             this.uxPageFooterHeightOG.Size = new System.Drawing.Size(100, 20);
             this.uxPageFooterHeightOG.TabIndex = 11;
@@ -192,7 +137,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 301);
+            this.label9.Location = new System.Drawing.Point(12, 191);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 13);
             this.label9.TabIndex = 0;
@@ -200,7 +145,7 @@
             // 
             // uxBottomMarginOG
             // 
-            this.uxBottomMarginOG.Location = new System.Drawing.Point(116, 298);
+            this.uxBottomMarginOG.Location = new System.Drawing.Point(116, 188);
             this.uxBottomMarginOG.Name = "uxBottomMarginOG";
             this.uxBottomMarginOG.Size = new System.Drawing.Size(100, 20);
             this.uxBottomMarginOG.TabIndex = 13;
@@ -209,7 +154,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 396);
+            this.label8.Location = new System.Drawing.Point(12, 286);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(143, 13);
             this.label8.TabIndex = 0;
@@ -218,7 +163,7 @@
             // lblCommentTextSuggestions
             // 
             this.lblCommentTextSuggestions.AutoSize = true;
-            this.lblCommentTextSuggestions.Location = new System.Drawing.Point(12, 409);
+            this.lblCommentTextSuggestions.Location = new System.Drawing.Point(12, 299);
             this.lblCommentTextSuggestions.Name = "lblCommentTextSuggestions";
             this.lblCommentTextSuggestions.Size = new System.Drawing.Size(75, 13);
             this.lblCommentTextSuggestions.TabIndex = 0;
@@ -228,7 +173,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(144, 162);
+            this.label11.Location = new System.Drawing.Point(144, 52);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(50, 13);
             this.label11.TabIndex = 0;
@@ -236,14 +181,14 @@
             // 
             // uxHeaderHeightSug
             // 
-            this.uxHeaderHeightSug.Location = new System.Drawing.Point(272, 220);
+            this.uxHeaderHeightSug.Location = new System.Drawing.Point(272, 110);
             this.uxHeaderHeightSug.Name = "uxHeaderHeightSug";
             this.uxHeaderHeightSug.Size = new System.Drawing.Size(100, 20);
             this.uxHeaderHeightSug.TabIndex = 8;
             // 
             // uxPageFooterHeightSug
             // 
-            this.uxPageFooterHeightSug.Location = new System.Drawing.Point(272, 272);
+            this.uxPageFooterHeightSug.Location = new System.Drawing.Point(272, 162);
             this.uxPageFooterHeightSug.Name = "uxPageFooterHeightSug";
             this.uxPageFooterHeightSug.Size = new System.Drawing.Size(100, 20);
             this.uxPageFooterHeightSug.TabIndex = 12;
@@ -252,7 +197,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(293, 162);
+            this.label12.Location = new System.Drawing.Point(293, 52);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(67, 13);
             this.label12.TabIndex = 0;
@@ -261,7 +206,7 @@
             // uxDesiredMovement
             // 
             this.uxDesiredMovement.FormattingEnabled = true;
-            this.uxDesiredMovement.Location = new System.Drawing.Point(117, 116);
+            this.uxDesiredMovement.Location = new System.Drawing.Point(117, 6);
             this.uxDesiredMovement.Name = "uxDesiredMovement";
             this.uxDesiredMovement.Size = new System.Drawing.Size(121, 21);
             this.uxDesiredMovement.TabIndex = 4;
@@ -269,7 +214,7 @@
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(13, 347);
+            this.btnCalculate.Location = new System.Drawing.Point(13, 237);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(432, 25);
             this.btnCalculate.TabIndex = 15;
@@ -280,7 +225,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(244, 119);
+            this.label10.Location = new System.Drawing.Point(244, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(22, 13);
             this.label10.TabIndex = 0;
@@ -288,7 +233,7 @@
             // 
             // uxNumberLinesToMoveBy
             // 
-            this.uxNumberLinesToMoveBy.Location = new System.Drawing.Point(272, 116);
+            this.uxNumberLinesToMoveBy.Location = new System.Drawing.Point(272, 6);
             this.uxNumberLinesToMoveBy.Name = "uxNumberLinesToMoveBy";
             this.uxNumberLinesToMoveBy.Size = new System.Drawing.Size(100, 20);
             this.uxNumberLinesToMoveBy.TabIndex = 5;
@@ -296,25 +241,16 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(378, 119);
+            this.label13.Location = new System.Drawing.Point(378, 9);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(32, 13);
             this.label13.TabIndex = 0;
             this.label13.Text = "Lines";
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(222, 12);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(38, 13);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "inches";
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(222, 199);
+            this.label15.Location = new System.Drawing.Point(222, 89);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(38, 13);
             this.label15.TabIndex = 0;
@@ -323,7 +259,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(222, 227);
+            this.label16.Location = new System.Drawing.Point(222, 117);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(38, 13);
             this.label16.TabIndex = 16;
@@ -332,7 +268,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(222, 253);
+            this.label17.Location = new System.Drawing.Point(222, 143);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(38, 13);
             this.label17.TabIndex = 17;
@@ -341,7 +277,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(222, 279);
+            this.label18.Location = new System.Drawing.Point(222, 169);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(38, 13);
             this.label18.TabIndex = 18;
@@ -350,7 +286,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(222, 305);
+            this.label19.Location = new System.Drawing.Point(222, 195);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(38, 13);
             this.label19.TabIndex = 19;
@@ -359,7 +295,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(378, 279);
+            this.label20.Location = new System.Drawing.Point(378, 169);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(38, 13);
             this.label20.TabIndex = 20;
@@ -368,7 +304,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(378, 227);
+            this.label21.Location = new System.Drawing.Point(378, 117);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(38, 13);
             this.label21.TabIndex = 21;
@@ -378,7 +314,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(12, 513);
+            this.label22.Location = new System.Drawing.Point(12, 403);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(78, 13);
             this.label22.TabIndex = 0;
@@ -386,7 +322,7 @@
             // 
             // uxIssueNotes
             // 
-            this.uxIssueNotes.Location = new System.Drawing.Point(15, 530);
+            this.uxIssueNotes.Location = new System.Drawing.Point(15, 420);
             this.uxIssueNotes.Multiline = true;
             this.uxIssueNotes.Name = "uxIssueNotes";
             this.uxIssueNotes.Size = new System.Drawing.Size(430, 66);
@@ -396,7 +332,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 608);
+            this.ClientSize = new System.Drawing.Size(457, 512);
             this.Controls.Add(this.uxIssueNotes);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
@@ -427,14 +363,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.uxNumberLinesToMoveBy);
-            this.Controls.Add(this.uxDetailsPerPage);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.uxRowsPerDetail);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.uxPageHeight);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.lblPageHeight);
             this.Name = "MarAdjustmentMainForm";
             this.Text = "Mar Adjustment";
             this.ResumeLayout(false);
@@ -444,12 +373,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblPageHeight;
-        private System.Windows.Forms.TextBox uxPageHeight;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox uxRowsPerDetail;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox uxDetailsPerPage;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox uxTopMarginOG;
@@ -472,7 +395,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox uxNumberLinesToMoveBy;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;

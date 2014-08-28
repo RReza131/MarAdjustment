@@ -22,6 +22,13 @@ namespace MarAdjustment
         }
         #endregion
 
+        #region Constants
+
+        const string MOVEMENT_UP_COMMENT = "You can not resolve this by adjusting the adjustments on the printer group and will have to \r\nadjust the layout height.";
+        const string MOVEMENT_DOWN_COMMENT = "Have you tried adding a vertical adjustment on the printer group? \r\nNote: This will shift all contents (header, footer, details) down";
+
+        #endregion
+
         #region Enums
         public enum MovementType
         {
@@ -104,10 +111,6 @@ namespace MarAdjustment
 
         private void SetValues()
         {
-             pageHeight = uxPageHeight.Text.Trim() != string.Empty? decimal.Parse(uxPageHeight.Text.Trim()):0;
-             rowsPerDetail = uxRowsPerDetail.Text.Trim() != string.Empty ? int.Parse(uxRowsPerDetail.Text.Trim()) : 0;
-             detailsPerPage = uxDetailsPerPage.Text.Trim() != string.Empty ? int.Parse(uxDetailsPerPage.Text.Trim()) : 0;
-
              desiredMovement = (MovementType)uxDesiredMovement.SelectedValue;
 
              topMarginOG = uxTopMarginOG.Text.Trim() != string.Empty? decimal.Parse(uxTopMarginOG.Text.Trim()):0;
@@ -128,7 +131,7 @@ namespace MarAdjustment
 
         private void SetDefaultValues()
         {
-            lblCommentTextSuggestions.Text = String.Empty;
+            lblCommentTextSuggestions.Text = MOVEMENT_DOWN_COMMENT;
             uxDesiredMovement.SelectedValue = MovementType.Down;
             uxNumberLinesToMoveBy.Text = "1";
             uxDetailHeightOG.Text = ".167";
@@ -219,15 +222,14 @@ namespace MarAdjustment
             if ((MovementType)uxDesiredMovement.SelectedValue == MovementType.Up)
             {
                 clearCommentBox();
-                suggestedComments.AppendLine("You can not resolve this by adjusting the adjustmens on the printer group and will have to adjust the layout height.");
+                suggestedComments.AppendLine(MOVEMENT_UP_COMMENT);
                 setCommentBox(suggestedComments);
 
             }
             else if ((MovementType)uxDesiredMovement.SelectedValue == MovementType.Down)
             {
                 clearCommentBox();
-                suggestedComments.AppendLine("Have you tried adding a vertical adjustment on the printer group?");
-                suggestedComments.AppendLine("Note: This will shift all contents (header, footer, details) down");
+                suggestedComments.AppendLine(MOVEMENT_DOWN_COMMENT);
                 setCommentBox(suggestedComments);
             }
         }
