@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace MarAdjustment
 {
@@ -17,8 +18,7 @@ namespace MarAdjustment
             InitializeComponent();
             LoadLookupLists();
             suggestedComments = new StringBuilder();
-            SetDefaultValues();
-
+            SetDefaultValues();     
         }
         #endregion
 
@@ -32,16 +32,12 @@ namespace MarAdjustment
         #region Enums
         public enum MovementType
         {
-            NA = 0,
             Down = 1,
             Up = 2      
         }
         #endregion
 
         #region Properties and Fields
-
-        private decimal _headerHeightSug;
-        private decimal _footerHeighSug;
 
         public decimal pageHeight { get; set; }
 
@@ -56,33 +52,8 @@ namespace MarAdjustment
         public decimal footerHeightOG { get; set; }
         public decimal bottomMarginHeightOG { get; set; }
         public decimal numberLinesToMoveBy { get; set; }
-
-        public decimal headerHeightSug        
-        {
-            get
-            {
-                return _headerHeightSug;
-            }
-
-            set
-            {
-                value = value <= 0 ? 0 : value;
-                _headerHeightSug = value;
-            }
-        }
-        public decimal footerHeightSug
-        {
-            get
-            {
-                return _footerHeighSug;
-            }
-
-            set
-            {
-                value = value <= 0 ? 0 : value;
-                _footerHeighSug = value;
-            }
-        }
+        public decimal headerHeightSug{ get; set; }
+        public decimal footerHeightSug { get; set; }
 
         private StringBuilder suggestedComments { get; set; }
 
@@ -99,7 +70,6 @@ namespace MarAdjustment
         private void LoadDesiredMovementList()
         {
             Dictionary<MovementType, string> list = new Dictionary<MovementType, string>();
-            list.Add(MovementType.NA, "");
             list.Add(MovementType.Down, "Down");
             list.Add(MovementType.Up, "Up");
 
@@ -119,22 +89,15 @@ namespace MarAdjustment
              footerHeightOG = uxPageFooterHeightOG.Text.Trim() != string.Empty ? decimal.Parse(uxPageFooterHeightOG.Text.Trim()) : 0;
              bottomMarginHeightOG = uxBottomMarginOG.Text.Trim() != string.Empty ? decimal.Parse(uxBottomMarginOG.Text.Trim()) : 0;
              numberLinesToMoveBy = uxNumberLinesToMoveBy.Text.Trim() != string.Empty ? decimal.Parse(uxNumberLinesToMoveBy.Text.Trim()) : 0;
-
-             
-
-             //topMarginSug = uxTopMarginSug.Text.Trim() != string.Empty ? decimal.Parse(uxTopMarginSug.Text.Trim()) : 0;
-             //headerHeightSug = uxHeaderHeightSug.Text.Trim() != string.Empty ? decimal.Parse(uxHeaderHeightSug.Text.Trim()) : 0;
-             //detailHeightSug = uxDetailHeightSug.Text.Trim() != string.Empty ? decimal.Parse(uxDetailHeightSug.Text.Trim()) : 0;
-             //footerHeightSug = uxPageFooterHeightSug.Text.Trim() != string.Empty ? decimal.Parse(uxPageFooterHeightSug.Text.Trim()) : 0;
-             //bottomMarginHeightSug = uxBottomMarginSug.Text.Trim() != string.Empty ? decimal.Parse(uxBottomMarginSug.Text.Trim()) : 0; 
         }
 
         private void SetDefaultValues()
         {
-            lblCommentTextSuggestions.Text = MOVEMENT_DOWN_COMMENT;
             uxDesiredMovement.SelectedValue = MovementType.Down;
             uxNumberLinesToMoveBy.Text = "1";
             uxDetailHeightOG.Text = ".167";
+            rtbCommentTextSuggestions.Text = MOVEMENT_DOWN_COMMENT;
+            
         }
 
         private string calculateHeaderHeight(decimal headerHeight, decimal detailHeight, MovementType Movement, decimal numberLinesToMoveBy)
@@ -185,7 +148,7 @@ namespace MarAdjustment
 
         private void setCommentBox(StringBuilder comment)
         {
-            lblCommentTextSuggestions.Text = comment.ToString();
+            rtbCommentTextSuggestions.Text = comment.ToString();
         }
         private void clearCommentBox()
         {
@@ -234,7 +197,27 @@ namespace MarAdjustment
             }
         }
 
+        private void uxDetailHeightOG_Leave(object sender, EventArgs e)
+        {
+            SetValues();
+            if (detailHeightOG < .166M || detailHeightOG > .169M)
+            {
+                clearCommentBox();
+                suggestedComments.AppendLine("Typical values for detail hieght are between .166 and .169");
+                suggestedComments.AppendLine("Have you compared the original MAR form's detail height to your current copy?");
+                setCommentBox(suggestedComments);
+                //bug not highlighting correct text
+                Debug.WriteLine(rtbCommentTextSuggestions.Text.IndexOf(".166") + " To " + rtbCommentTextSuggestions.Text.IndexOf("and"));
+                rtbCommentTextSuggestions.Select(rtbCommentTextSuggestions.Text.IndexOf(".166"), rtbCommentTextSuggestions.Text.IndexOf(".169") + 3);
+                rtbCommentTextSuggestions.SelectionColor = Color.Red;
+
+            }
+
+        }
+
         #endregion
+
+
 
 
 
