@@ -40,6 +40,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.uxBottomMarginOG = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.lblCommentTextSuggestions = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.uxHeaderHeightSug = new System.Windows.Forms.TextBox();
             this.uxPageFooterHeightSug = new System.Windows.Forms.TextBox();
@@ -58,7 +59,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.uxIssueNotes = new System.Windows.Forms.TextBox();
-            this.rtbCommentTextSuggestions = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label3
@@ -97,7 +97,6 @@
             // 
             // uxHeaderHeightOG
             // 
-            this.uxHeaderHeightOG.ForeColor = System.Drawing.SystemColors.WindowText;
             this.uxHeaderHeightOG.Location = new System.Drawing.Point(116, 110);
             this.uxHeaderHeightOG.Name = "uxHeaderHeightOG";
             this.uxHeaderHeightOG.Size = new System.Drawing.Size(100, 20);
@@ -118,7 +117,6 @@
             this.uxDetailHeightOG.Name = "uxDetailHeightOG";
             this.uxDetailHeightOG.Size = new System.Drawing.Size(100, 20);
             this.uxDetailHeightOG.TabIndex = 9;
-            this.uxDetailHeightOG.Leave += new System.EventHandler(this.uxDetailHeightOG_Leave);
             // 
             // label7
             // 
@@ -161,6 +159,15 @@
             this.label8.Size = new System.Drawing.Size(143, 13);
             this.label8.TabIndex = 0;
             this.label8.Text = "Suggestions/Comments:";
+            // 
+            // lblCommentTextSuggestions
+            // 
+            this.lblCommentTextSuggestions.AutoSize = true;
+            this.lblCommentTextSuggestions.Location = new System.Drawing.Point(12, 299);
+            this.lblCommentTextSuggestions.Name = "lblCommentTextSuggestions";
+            this.lblCommentTextSuggestions.Size = new System.Drawing.Size(75, 13);
+            this.lblCommentTextSuggestions.TabIndex = 0;
+            this.lblCommentTextSuggestions.Text = "Comment Text";
             // 
             // label11
             // 
@@ -321,23 +328,11 @@
             this.uxIssueNotes.Size = new System.Drawing.Size(430, 66);
             this.uxIssueNotes.TabIndex = 22;
             // 
-            // rtbCommentTextSuggestions
-            // 
-            this.rtbCommentTextSuggestions.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.rtbCommentTextSuggestions.Location = new System.Drawing.Point(15, 303);
-            this.rtbCommentTextSuggestions.Name = "rtbCommentTextSuggestions";
-            this.rtbCommentTextSuggestions.ReadOnly = true;
-            this.rtbCommentTextSuggestions.Size = new System.Drawing.Size(430, 97);
-            this.rtbCommentTextSuggestions.TabIndex = 23;
-            this.rtbCommentTextSuggestions.TabStop = false;
-            this.rtbCommentTextSuggestions.Text = "";
-            // 
             // MarAdjustmentMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 512);
-            this.Controls.Add(this.rtbCommentTextSuggestions);
             this.Controls.Add(this.uxIssueNotes);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
@@ -350,6 +345,7 @@
             this.Controls.Add(this.uxBottomMarginOG);
             this.Controls.Add(this.uxPageFooterHeightSug);
             this.Controls.Add(this.uxPageFooterHeightOG);
+            this.Controls.Add(this.lblCommentTextSuggestions);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.uxDetailHeightOG);
@@ -389,6 +385,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox uxBottomMarginOG;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblCommentTextSuggestions;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox uxHeaderHeightSug;
         private System.Windows.Forms.TextBox uxPageFooterHeightSug;
@@ -407,7 +404,6 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox uxIssueNotes;
-        private System.Windows.Forms.RichTextBox rtbCommentTextSuggestions;
     }
 }
 
