@@ -1,0 +1,7 @@
+C:\Users\breza\Documents\GitHub\MarAdjustment\UnitTestProject2\bin\Debug\UnitTestProject2.dll
+C:\Users\breza\Documents\GitHub\MarAdjustment\UnitTestProject2\bin\Debug\UnitTestProject2.pdb
+C:\Users\breza\Documents\GitHub\MarAdjustment\UnitTestProject2\obj\Debug\UnitTestProject2.csprojResolveAssemblyReference.cache
+C:\Users\breza\Documents\GitHub\MarAdjustment\UnitTestProject2\obj\Debug\UnitTestProject2.dll
+C:\Users\breza\Documents\GitHub\MarAdjustment\UnitTestProject2\obj\Debug\UnitTestProject2.pdb
+C:\Users\breza\Documents\GitHub\MarAdjustment\UnitTestProject2\bin\Debug\MarAdjustment.exe
+C:\Users\breza\Documents\GitHub\MarAdjustment\UnitTestProject2\bin\Debug\MarAdjustment.pdb
