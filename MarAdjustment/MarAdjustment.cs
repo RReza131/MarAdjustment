@@ -40,9 +40,6 @@ namespace MarAdjustment
 
         #region Properties and Fields
 
-        private decimal _headerHeightSug;
-        private decimal _footerHeighSug;
-
         public decimal pageHeight { get; set; }
 
         public int rowsPerDetail { get; set; }
@@ -58,9 +55,14 @@ namespace MarAdjustment
         public decimal numberLinesToMoveBy { get; set; }
         public decimal headerHeightSug { get; set; }
         public decimal footerHeightSug { get; set; }
+        public decimal topMarginSug { get; set; }
+        public decimal bottomMarginSug { get; set; }
 
         private StringBuilder suggestedComments { get; set; }
         private bool sectionHtExceeded { get; set; }
+        private bool isFirstClick = true;
+        private bool isValid = true;
+        private bool isClearPressed = false;
 
         #endregion
 
@@ -208,6 +210,18 @@ namespace MarAdjustment
                 
         }
 
+        private void ClearAllControls()
+        {
+            foreach (Control c in this.Controls)
+            {
+                if (c is TextBox)
+                {
+                    c.ResetText();
+                }
+            }
+            SetDefaultValues();
+        }
+
 
         #endregion
 
@@ -215,9 +229,21 @@ namespace MarAdjustment
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            SetValues();
-            uxHeaderHeightSug.Text = calculateHeaderHeight(headerHeightOG, detailHeightOG, desiredMovement, numberLinesToMoveBy);
-            uxPageFooterHeightSug.Text = calculateFooterHeight(footerHeightOG, detailHeightOG, desiredMovement, numberLinesToMoveBy);
+            if (isFirstClick)
+            {
+                SetValues();
+                uxHeaderHeightSug.Text = calculateHeaderHeight(headerHeightOG, detailHeightOG, desiredMovement, numberLinesToMoveBy);
+                uxPageFooterHeightSug.Text = calculateFooterHeight(footerHeightOG, detailHeightOG, desiredMovement, numberLinesToMoveBy);
+                btnCalculate.Text = "Calculate Using Margins";
+
+                isFirstClick = false;
+            }
+            else
+            {
+                SetValues();
+                isFirstClick = true;
+                btnCalculate.Text = "Calculate Using Section Heights";
+            }
 
         }
 
@@ -258,8 +284,40 @@ namespace MarAdjustment
 
         }
 
+        private void Control_Validation(object sender, EventArgs e)
+        {
+            TextBox ControlToValidate = sender as TextBox;
+            if (ControlToValidate.Text.Length > 0)
+            {
+                float result;
+                isValid = float.TryParse(ControlToValidate.Text, out result);
+                clearCommentBox();
+                if (!isValid)
+                {
+                    suggestedComments.AppendLine("Please enter a valid number");
+                    setCommentBox(suggestedComments);
+                }
+            }
+            else
+            {
+                clearCommentBox();
+            }
+        }
+
 
         #endregion
+
+        private void btnClearAll(object sender, EventArgs e)
+        {
+            ClearAllControls();
+            rtbCommentTextSuggestions.SelectAll();
+            rtbCommentTextSuggestions.SelectionColor = Color.Black;
+            if (!isFirstClick)
+            {
+                btnCalculate.Text = "Calculate Using Section Heights";
+                isFirstClick = true;
+            }
+        }
 
 
 

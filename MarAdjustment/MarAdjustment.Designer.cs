@@ -59,6 +59,11 @@
             this.label22 = new System.Windows.Forms.Label();
             this.uxIssueNotes = new System.Windows.Forms.TextBox();
             this.rtbCommentTextSuggestions = new System.Windows.Forms.RichTextBox();
+            this.uxTopMarginSug = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.uxBottomMarginSug = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label3
@@ -85,6 +90,7 @@
             this.uxTopMarginOG.Name = "uxTopMarginOG";
             this.uxTopMarginOG.Size = new System.Drawing.Size(100, 20);
             this.uxTopMarginOG.TabIndex = 6;
+            this.uxTopMarginOG.Leave += new System.EventHandler(this.Control_Validation);
             // 
             // label5
             // 
@@ -101,6 +107,7 @@
             this.uxHeaderHeightOG.Name = "uxHeaderHeightOG";
             this.uxHeaderHeightOG.Size = new System.Drawing.Size(100, 20);
             this.uxHeaderHeightOG.TabIndex = 7;
+            this.uxHeaderHeightOG.Leave += new System.EventHandler(this.Control_Validation);
             // 
             // label6
             // 
@@ -134,6 +141,7 @@
             this.uxPageFooterHeightOG.Name = "uxPageFooterHeightOG";
             this.uxPageFooterHeightOG.Size = new System.Drawing.Size(100, 20);
             this.uxPageFooterHeightOG.TabIndex = 11;
+            this.uxPageFooterHeightOG.Leave += new System.EventHandler(this.Control_Validation);
             // 
             // label9
             // 
@@ -150,12 +158,13 @@
             this.uxBottomMarginOG.Name = "uxBottomMarginOG";
             this.uxBottomMarginOG.Size = new System.Drawing.Size(100, 20);
             this.uxBottomMarginOG.TabIndex = 13;
+            this.uxBottomMarginOG.Leave += new System.EventHandler(this.Control_Validation);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 286);
+            this.label8.Location = new System.Drawing.Point(10, 309);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(143, 13);
             this.label8.TabIndex = 0;
@@ -173,17 +182,21 @@
             // 
             // uxHeaderHeightSug
             // 
+            this.uxHeaderHeightSug.CausesValidation = false;
             this.uxHeaderHeightSug.Location = new System.Drawing.Point(272, 110);
             this.uxHeaderHeightSug.Name = "uxHeaderHeightSug";
             this.uxHeaderHeightSug.Size = new System.Drawing.Size(100, 20);
             this.uxHeaderHeightSug.TabIndex = 8;
+            this.uxHeaderHeightSug.TabStop = false;
             // 
             // uxPageFooterHeightSug
             // 
+            this.uxPageFooterHeightSug.CausesValidation = false;
             this.uxPageFooterHeightSug.Location = new System.Drawing.Point(272, 162);
             this.uxPageFooterHeightSug.Name = "uxPageFooterHeightSug";
             this.uxPageFooterHeightSug.Size = new System.Drawing.Size(100, 20);
             this.uxPageFooterHeightSug.TabIndex = 12;
+            this.uxPageFooterHeightSug.TabStop = false;
             // 
             // label12
             // 
@@ -197,6 +210,7 @@
             // 
             // uxDesiredMovement
             // 
+            this.uxDesiredMovement.CausesValidation = false;
             this.uxDesiredMovement.FormattingEnabled = true;
             this.uxDesiredMovement.Location = new System.Drawing.Point(117, 6);
             this.uxDesiredMovement.Name = "uxDesiredMovement";
@@ -206,11 +220,12 @@
             // 
             // btnCalculate
             // 
+            this.btnCalculate.CausesValidation = false;
             this.btnCalculate.Location = new System.Drawing.Point(13, 237);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(432, 25);
             this.btnCalculate.TabIndex = 15;
-            this.btnCalculate.Text = "Calculate";
+            this.btnCalculate.Text = "Calculate Using Section Heights";
             this.btnCalculate.UseVisualStyleBackColor = true;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
@@ -306,7 +321,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(12, 403);
+            this.label22.Location = new System.Drawing.Point(10, 426);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(78, 13);
             this.label22.TabIndex = 0;
@@ -314,7 +329,8 @@
             // 
             // uxIssueNotes
             // 
-            this.uxIssueNotes.Location = new System.Drawing.Point(15, 420);
+            this.uxIssueNotes.CausesValidation = false;
+            this.uxIssueNotes.Location = new System.Drawing.Point(13, 443);
             this.uxIssueNotes.Multiline = true;
             this.uxIssueNotes.Name = "uxIssueNotes";
             this.uxIssueNotes.Size = new System.Drawing.Size(430, 66);
@@ -323,26 +339,77 @@
             // rtbCommentTextSuggestions
             // 
             this.rtbCommentTextSuggestions.BackColor = System.Drawing.SystemColors.Control;
-            this.rtbCommentTextSuggestions.Location = new System.Drawing.Point(15, 303);
+            this.rtbCommentTextSuggestions.CausesValidation = false;
+            this.rtbCommentTextSuggestions.Location = new System.Drawing.Point(13, 326);
             this.rtbCommentTextSuggestions.Name = "rtbCommentTextSuggestions";
             this.rtbCommentTextSuggestions.Size = new System.Drawing.Size(430, 97);
             this.rtbCommentTextSuggestions.TabIndex = 23;
             this.rtbCommentTextSuggestions.Text = "";
             this.rtbCommentTextSuggestions.Leave += new System.EventHandler(this.uxDetailHeightOG_Leave);
             // 
+            // uxTopMarginSug
+            // 
+            this.uxTopMarginSug.CausesValidation = false;
+            this.uxTopMarginSug.Location = new System.Drawing.Point(272, 82);
+            this.uxTopMarginSug.Name = "uxTopMarginSug";
+            this.uxTopMarginSug.Size = new System.Drawing.Size(100, 20);
+            this.uxTopMarginSug.TabIndex = 8;
+            this.uxTopMarginSug.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(378, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "inches";
+            // 
+            // uxBottomMarginSug
+            // 
+            this.uxBottomMarginSug.CausesValidation = false;
+            this.uxBottomMarginSug.Location = new System.Drawing.Point(272, 188);
+            this.uxBottomMarginSug.Name = "uxBottomMarginSug";
+            this.uxBottomMarginSug.Size = new System.Drawing.Size(100, 20);
+            this.uxBottomMarginSug.TabIndex = 8;
+            this.uxBottomMarginSug.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(378, 195);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "inches";
+            // 
+            // btnClear
+            // 
+            this.btnClear.CausesValidation = false;
+            this.btnClear.Location = new System.Drawing.Point(13, 268);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(432, 25);
+            this.btnClear.TabIndex = 16;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClearAll);
+            // 
             // MarAdjustmentMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 512);
+            this.ClientSize = new System.Drawing.Size(457, 545);
             this.Controls.Add(this.rtbCommentTextSuggestions);
             this.Controls.Add(this.uxIssueNotes);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.uxDesiredMovement);
             this.Controls.Add(this.uxBottomMarginOG);
@@ -352,6 +419,8 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.uxDetailHeightOG);
             this.Controls.Add(this.label9);
+            this.Controls.Add(this.uxBottomMarginSug);
+            this.Controls.Add(this.uxTopMarginSug);
             this.Controls.Add(this.uxHeaderHeightSug);
             this.Controls.Add(this.uxHeaderHeightOG);
             this.Controls.Add(this.label7);
@@ -406,6 +475,11 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox uxIssueNotes;
         private System.Windows.Forms.RichTextBox rtbCommentTextSuggestions;
+        private System.Windows.Forms.TextBox uxTopMarginSug;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox uxBottomMarginSug;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 
